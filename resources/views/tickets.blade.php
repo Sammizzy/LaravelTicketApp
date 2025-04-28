@@ -22,15 +22,19 @@
                             </div>
                         @endif
 
-                        @if(!empty($ticketData))
-                            <h2>Ticket Details:</h2>
+                        @if($tickets->count())
+                            <h2>All Submitted Tickets:</h2>
                             <ul>
-                                <li><strong>Name:</strong> {{ $ticketData['name'] }}</li>
-                                <li><strong>Email:</strong> {{ $ticketData['email'] }}</li>
-                                <li><strong>Subject:</strong> {{ $ticketData['subject'] }}</li>
+                                @foreach($tickets as $ticket)
+                                    <li>
+                                        <strong>Name:</strong> {{ $ticket->name }} |
+                                        <strong>Email:</strong> {{ $ticket->email }} |
+                                        <strong>Subject:</strong> {{ $ticket->subject }}
+                                    </li>
+                                @endforeach
                             </ul>
                         @else
-                            <p>No ticket data available.</p>
+                            <p>No tickets yet.</p>
                         @endif
 
 

@@ -4,6 +4,8 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
+use App\Models\Ticket;
+
 
 class FrontController extends Controller
 
@@ -31,10 +33,8 @@ class FrontController extends Controller
     public function tickets()
 
     {
-        // Retrieve ticket data from session
-        $ticketData = session('ticketData', []);
-
-        return view('tickets', compact('ticketData'));
+        $tickets = Ticket::all(); // fetch all tickets
+        return view('tickets', compact('tickets'));
     }
     /**
      * Display a listing of the resource.

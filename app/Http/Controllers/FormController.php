@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Ticket;
 use Illuminate\Http\Request;
 
 class FormController extends Controller
@@ -21,11 +21,10 @@ class FormController extends Controller
             'subject' => 'required',
         ]);
 
-        // Pass data through session to the tickets page
-        return redirect()->route('tickets')->with([
-            'success' => 'Ticket submitted successfully!',
-            'ticketData' => $validatedData,
-        ]);
+        // Save ticket to database
+        Ticket::create($validatedData);
+
+        return redirect()->route('tickets')->with('success', 'Ticket submitted successfully!');
     }
 }
 
