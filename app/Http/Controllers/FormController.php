@@ -19,6 +19,7 @@ class FormController extends Controller
             'name' => 'required|max:255',
             'email' => 'required|email',
             'subject' => 'required',
+            'message' => 'required',
         ]);
 
         // Save ticket to database

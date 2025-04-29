@@ -44,6 +44,13 @@
                            class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm p-2 focus:border-blue-500 focus:ring-blue-500">
                 </div>
 
+                <div>
+                    <label for="Message" class="block text-sm font-medium text-gray-700">More information</label>
+                    <input type="text" id="message" name="message" value="{{ old('message') }}"
+                           class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm p-2 focus:border-blue-500 focus:ring-blue-500">
+                </div>
+
+
                 <div class="text-center">
                     <button type="submit"
                             class="bg-blue-600 text-white font-semibold px-6 py-2 rounded-md hover:bg-blue-700 transition">

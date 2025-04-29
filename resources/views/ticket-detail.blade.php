@@ -7,7 +7,7 @@
         <p><strong>Name:</strong> {{ $ticket->name }}</p>
         <p><strong>Email:</strong> {{ $ticket->email }}</p>
         <p><strong>Subject:</strong> {{ $ticket->subject }}</p>
-        <p><strong>Message:</strong> {{ $ticket->message }}</p> <!-- Only if you have a message field -->
+        <p><strong>Message:</strong> {{ $ticket->message }}</p>
         <a href="{{ route('tickets') }}" class="mt-4 inline-block text-blue-600 hover:underline">Back to Tickets</a>
     </div>
 @endsection

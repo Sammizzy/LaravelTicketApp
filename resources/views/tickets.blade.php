@@ -20,6 +20,7 @@
                                 <p><strong>Name:</strong> {{ $ticket->name }}</p>
                                 <p><strong>Email:</strong> {{ $ticket->email }}</p>
                                 <p><strong>Subject:</strong> {{ $ticket->subject }}</p>
+                                
                             </a>
                         </div>
                     @endforeach

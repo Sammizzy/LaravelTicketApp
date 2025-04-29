@@ -9,7 +9,7 @@ Route::get('home', [FrontController::class, 'home'])->name('home');
 Route::get('welcome', [FrontController::class, 'welcome'])->name('welcome');
 Route::get('tickets', [FrontController::class, 'tickets'])->name('tickets');
 
-Route::get('tickets/{id}', [FrontController::class, 'showTicket'])->name('tickets.show');
+Route::get('tickets/{id}', [FrontController::class, 'showTicket'])->name('tickets.show'); //tickets create links to their own page
 
 // Form pages
 Route::get('form', [FormController::class, 'showForm'])->name('form'); // Only this GET /form
