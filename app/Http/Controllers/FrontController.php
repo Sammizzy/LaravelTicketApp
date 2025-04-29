@@ -63,6 +63,14 @@ class FrontController extends Controller
         return view('ticket-detail', compact('ticket')); // Pass $ticket to the view
     }
 
+    public function destroyTicket($id)
+    {
+        $ticket = \App\Models\Ticket::findOrFail($id);
+        $ticket->delete();
+
+        return redirect()->route('tickets')->with('success', 'Ticket deleted successfully.');
+    }
+
 
 
 }

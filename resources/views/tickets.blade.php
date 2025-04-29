@@ -20,8 +20,19 @@
                                 <p><strong>Name:</strong> {{ $ticket->name }}</p>
                                 <p><strong>Email:</strong> {{ $ticket->email }}</p>
                                 <p><strong>Subject:</strong> {{ $ticket->subject }}</p>
-                                
                             </a>
+
+                            <form action="{{ route('tickets.destroy', $ticket->id) }}" method="POST" class="mt-2">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit"
+                                        onclick="return confirm('Are you sure you want to delete this ticket?');"
+                                        class="mt-2 bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md">
+                                    Delete
+                                </button>
+                            </form>
+                        </div>
+
                         </div>
                     @endforeach
                 </div>
