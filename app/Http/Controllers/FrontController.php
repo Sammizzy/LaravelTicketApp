@@ -71,6 +71,25 @@ class FrontController extends Controller
         return redirect()->route('tickets')->with('success', 'Ticket deleted successfully.');
     }
 
+    public function approveTicket($id)
+    {
+        $ticket = \App\Models\Ticket::findOrFail($id);
+        $ticket->status = 'approved';
+        $ticket->save();
+
+        return back()->with('success', 'Ticket approved.');
+    }
+
+    public function denyTicket($id)
+    {
+        $ticket = \App\Models\Ticket::findOrFail($id);
+        $ticket->status = 'denied';
+        $ticket->save();
+
+        return back()->with('success', 'Ticket denied.');
+    }
+
+
 
 
 }

@@ -15,7 +15,7 @@
             @method('DELETE')
             <button type="submit"
                     onclick="return confirm('Are you sure you want to delete this ticket?');"
-                    class="mt-2 bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md">
+                    class="mt-2 bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md"> <!--adds a delete button in the tickets page -->
                 Delete
             </button>
         </form>
