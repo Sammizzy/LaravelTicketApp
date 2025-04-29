@@ -13,7 +13,7 @@
             @endif
 
             @if($tickets->count())
-                <div class="space-y-4">
+                <div class="space-y-4"> <!--changes ticket border colour depending on selection -->
                     @foreach($tickets as $ticket)
                         @php
                             $borderColor = match($ticket->status) {
@@ -31,7 +31,7 @@
                             </a>
 
                             <div class="flex gap-2 mt-4">
-                                <form action="{{ route('tickets.approve', $ticket->id) }}" method="POST">
+                                <form action="{{ route('tickets.approve', $ticket->id) }}" method="POST"> <!--calls on the tickets.approve route in the web.php-->
                                     @csrf
                                     <button type="submit"
                                             class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-md">
@@ -39,7 +39,7 @@
                                     </button>
                                 </form>
 
-                                <form action="{{ route('tickets.deny', $ticket->id) }}" method="POST">
+                                <form action="{{ route('tickets.deny', $ticket->id) }}" method="POST"> <!--calls on the tickets.deny route in the web.php-->
                                     @csrf
                                     <button type="submit"
                                             class="bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded-md">
@@ -47,12 +47,12 @@
                                     </button>
                                 </form>
 
-                                <form action="{{ route('tickets.destroy', $ticket->id) }}" method="POST" class="ml-auto">
+                                <form action="{{ route('tickets.destroy', $ticket->id) }}" method="POST" class="ml-auto"> <!--calls on the tickets.destroy route in the web.php-->
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit"
                                             onclick="return confirm('Are you sure you want to delete this ticket?');"
-                                            class="bg-gray-500 hover:bg-gray-600 text-white px-3 py-1 rounded-md">
+                                            class="bg-gray-500 hover:bg-gray-600 text-white px-3 py-1 rounded-md"> <!--button confirming the ticket to be deleted -->
                                         Delete
                                     </button>
                                 </form>

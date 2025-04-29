@@ -16,7 +16,7 @@ class FormController extends Controller
     public function submitForm(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required|max:255',
+            'name' => 'required|max:500',
             'email' => 'required|email',
             'subject' => 'required',
             'message' => 'required',

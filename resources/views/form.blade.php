@@ -45,10 +45,17 @@
                 </div>
 
                 <div>
-                    <label for="Message" class="block text-sm font-medium text-gray-700">More information</label>
-                    <input type="text" id="message" name="message" value="{{ old('message') }}"
-                           class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm p-2 focus:border-blue-500 focus:ring-blue-500">
+                    <label for="message" class="block text-sm font-medium text-gray-700">Description</label>
+                    <textarea id="message" name="message" oninput="adjustHeight(this)"
+                              class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm p-2 focus:border-blue-500 focus:ring-blue-500"></textarea>
                 </div>
+
+                <script>
+                    function adjustHeight(element) {
+                        element.style.height = "auto"; // Reset height first
+                        element.style.height = element.scrollHeight + "px"; // Set new height based on content
+                    }
+                </script>
 
 
                 <div class="text-center">
