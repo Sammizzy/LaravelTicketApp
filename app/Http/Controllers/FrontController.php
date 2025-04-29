@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Ticket;
 
 
+
 class FrontController extends Controller
 
 {
@@ -55,6 +56,13 @@ class FrontController extends Controller
         return view('form');
 
     }
+
+    public function showTicket($id)
+    {
+        $ticket = Ticket::findOrFail($id); // Fetch the ticket or 404
+        return view('ticket-detail', compact('ticket')); // Pass $ticket to the view
+    }
+
 
 
 }

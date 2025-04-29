@@ -15,16 +15,19 @@
             @if($tickets->count())
                 <div class="space-y-4">
                     @foreach($tickets as $ticket)
-                        <div class="border border-gray-300 rounded-lg p-4 shadow-sm bg-gray-50">
-                            <p><strong>Name:</strong> {{ $ticket->name }}</p>
-                            <p><strong>Email:</strong> {{ $ticket->email }}</p>
-                            <p><strong>Subject:</strong> {{ $ticket->subject }}</p>
+                        <div class="border border-gray-300 rounded-lg p-4 shadow-sm bg-gray-50 hover:bg-gray-100 transition">
+                            <a href="{{ route('tickets.show', $ticket->id) }}" class="block">
+                                <p><strong>Name:</strong> {{ $ticket->name }}</p>
+                                <p><strong>Email:</strong> {{ $ticket->email }}</p>
+                                <p><strong>Subject:</strong> {{ $ticket->subject }}</p>
+                            </a>
                         </div>
                     @endforeach
                 </div>
             @else
                 <p class="text-gray-500">No tickets yet.</p>
             @endif
+
         </div>
     </div>
 @endsection
