@@ -59,8 +59,9 @@ class FrontController extends Controller
 
     public function showTicket($id)
     {
-        $ticket = Ticket::findOrFail($id); // Fetch the ticket or 404
-        return view('ticket-detail', compact('ticket')); // Pass $ticket to the view
+        // Include soft-deleted tickets using withTrashed()
+        $ticket = \App\Models\Ticket::withTrashed()->findOrFail($id);
+        return view('ticket-detail', compact('ticket'));
     }
 
     public function destroyTicket($id)
@@ -88,6 +89,21 @@ class FrontController extends Controller
 
         return back()->with('success', 'Ticket denied.');
     }
+
+    public function deletedTickets()
+    {
+        $tickets = \App\Models\Ticket::onlyTrashed()->get(); // Only soft-deleted tickets
+        return view('deleted-tickets', compact('tickets'));
+    }
+
+    public function restoreTicket($id)
+    {
+        $ticket = \App\Models\Ticket::withTrashed()->findOrFail($id);
+        $ticket->restore();
+
+        return redirect()->route('tickets.deleted')->with('success', 'Ticket restored successfully.');
+    }
+
 
 
 

@@ -12,7 +12,7 @@
             <textarea id="message" readonly oninput="adjustHeight(this)"
                       class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm p-2 focus:border-blue-500 focus:ring-blue-500">
         {{ $ticket->message }}
-    </textarea>
+        </textarea>
         </div>
 
         <script>

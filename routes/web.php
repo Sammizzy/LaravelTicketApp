@@ -9,6 +9,8 @@ Route::get('home', [FrontController::class, 'home'])->name('home');
 Route::get('welcome', [FrontController::class, 'welcome'])->name('welcome');
 Route::get('tickets', [FrontController::class, 'tickets'])->name('tickets');
 
+Route::get('tickets/deleted', [FrontController::class, 'deletedTickets'])->name('tickets.deleted');
+Route::post('tickets/{id}/restore', [FrontController::class, 'restoreTicket'])->name('tickets.restore');
 Route::get('tickets/{id}', [FrontController::class, 'showTicket'])->name('tickets.show'); //tickets create links to their own page
 Route::delete('tickets/{id}', [FrontController::class, 'destroyTicket'])->name('tickets.destroy');
 

@@ -6,7 +6,15 @@
             <h1 class="text-2xl font-bold mb-4">Tickets</h1>
             <p class="text-gray-600 mb-6">You are in the Tickets Page. Tickets will be displayed here along with create/history/approve/deny actions.</p>
 
-            @if(session('success'))
+            <div class="flex justify-end mb-4">
+                <a href="{{ route('tickets.deleted') }}"
+                   class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md">
+                    View Deleted Tickets
+                </a>
+            </div>
+
+
+        @if(session('success'))
                 <div class="mb-4 p-4 bg-green-100 text-green-800 rounded-md">
                     {{ session('success') }}
                 </div>
@@ -22,6 +30,7 @@
                                 default => 'border-gray-300'
                             };
                         @endphp
+
 
                         <div class="rounded-lg p-4 shadow-sm bg-gray-50 hover:bg-gray-100 transition border {{ $borderColor }}">
                             <a href="{{ route('tickets.show', $ticket->id) }}" class="block">
