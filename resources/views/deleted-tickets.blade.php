@@ -9,7 +9,7 @@
                 {{ session('success') }}
             </div>
         @endif
-
+        <a href="{{ route('tickets') }}" class="mt-4 inline-block text-blue-600 hover:underline">← Back to Tickets</a>
         @if($tickets->count())
             <div class="space-y-4">
                 @foreach($tickets as $ticket)
@@ -18,7 +18,7 @@
                             <strong>{{ $ticket->subject }}</strong> from {{ $ticket->email }}
                         </a>
 
-                        <form action="{{ route('tickets.restore', $ticket->id) }}" method="POST">
+                        <form action="{{ route('tickets.restore', $ticket->id) }}" method="POST"> <!--restore button restores to ticket list-->
                             @csrf
                             <button type="submit"
                                     class="bg-green-500 hover:bg-green-600 text-white px-3 py-1 rounded-md">

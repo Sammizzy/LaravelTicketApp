@@ -46,7 +46,17 @@ class NavbarSeeder extends Seeder
                 'route' => 'form',
                 'ordering' => 4,
 
-            ]
+            ],
+            [
+                'name' => 'Login',
+                'route' => 'login',
+                'ordering' => 5,
+            ],
+            [
+            'name' => 'Register',
+            'route' => 'register',
+            'ordering' => 6,
+        ]
         ];
 
         foreach ($links as $key => $navbar) {

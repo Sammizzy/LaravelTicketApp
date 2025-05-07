@@ -26,6 +26,14 @@ class FrontController extends Controller
 
     }
 
+    public function login()
+
+    {
+
+        return view('login');
+
+    }
+
     /**
      * Display a listing of the resource.
      *
