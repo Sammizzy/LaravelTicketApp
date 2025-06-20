@@ -16,8 +16,9 @@ return new class extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('email');
-            $table->string('subject');
-            $table->text('message');
+            $table->integer('distance')->nullable();
+            $table->string('terrain')->nullable();
+            $table->text('description')->nullable();
             $table->softDeletes();
 
         });

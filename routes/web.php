@@ -11,6 +11,7 @@ Route::get('welcome', [FrontController::class, 'welcome'])->name('welcome');
 Route::get('tickets', [FrontController::class, 'tickets'])->name('tickets');
 Route::get('login', [FrontController::class, 'login'])->name('login');
 
+Route::get('/tickets/search', [FrontController::class, 'ticketsbyquery'])->name('tickets.search');
 Route::get('tickets/deleted', [FrontController::class, 'deletedTickets'])->name('tickets.deleted');
 Route::post('tickets/{id}/restore', [FrontController::class, 'restoreTicket'])->name('tickets.restore');
 Route::get('tickets/{id}', [FrontController::class, 'showTicket'])->name('tickets.show'); //tickets create links to their own page
@@ -18,6 +19,7 @@ Route::delete('tickets/{id}', [FrontController::class, 'destroyTicket'])->name('
 
 Route::post('tickets/{id}/approve', [FrontController::class, 'approveTicket'])->name('tickets.approve');
 Route::post('tickets/{id}/deny', [FrontController::class, 'denyTicket'])->name('tickets.deny');
+
 
 //Route::resource('tickets', FrontController::class );
 

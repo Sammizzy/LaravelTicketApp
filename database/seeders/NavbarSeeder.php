@@ -42,7 +42,7 @@ class NavbarSeeder extends Seeder
             ],
             [
 
-                'name' => 'Form',
+                'name' => 'Log a run',
                 'route' => 'form',
                 'ordering' => 4,
 

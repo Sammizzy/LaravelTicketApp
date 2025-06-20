@@ -2,16 +2,19 @@
 
 @section('content')
     <div class="max-w-3xl mx-auto p-6 bg-white rounded-lg shadow-md">
-        <h2 class="text-2xl font-bold mb-4">Ticket Details</h2>
+        <h2 class="text-2xl font-bold mb-4">Run Details</h2>
         <p><strong>Name:</strong> {{ $ticket->name }}</p>
         <p><strong>Email:</strong> {{ $ticket->email }}</p>
-        <p><strong>Subject:</strong> {{ $ticket->subject }}</p>
+        <p><strong>Distance (miles):</strong> {{ $ticket->distance }}</p>
+        <p><strong>Terrain</strong> {{ $ticket->terrain }}</p>
 
-        <div >
-            <label for="message" class="text-xl font-bold mb-4">Description</label>
-            <textarea id="message" readonly oninput="adjustHeight(this)"
+        <hr class="pb-5">
+
+        <div>
+            <label for="description" class="text-xl font-bold mb-4">Description</label>
+            <textarea id="description" readonly oninput="adjustHeight(this)"
                       class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm p-2 focus:border-blue-500 focus:ring-blue-500">
-        {{ $ticket->message }}
+        {{ $ticket->description }}
         </textarea>
         </div>
 

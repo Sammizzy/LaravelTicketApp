@@ -4,7 +4,7 @@
     <div class="pt-32 px-4 flex justify-center">
         <div class="w-full max-w-lg bg-white border-2 border-gray-700 rounded-xl shadow-lg p-6">
 
-            <h1 class="text-2xl font-bold mb-6 text-center text-gray-800">Submit a Ticket</h1>
+            <h1 class="text-2xl font-bold mb-6 text-center text-gray-800">Log your run</h1>
 
             <!-- Validation Errors -->
             @if ($errors->any())
@@ -39,14 +39,20 @@
                 </div>
 
                 <div>
-                    <label for="subject" class="block text-sm font-medium text-gray-700">Subject</label>
-                    <input type="text" id="subject" name="subject" value="{{ old('subject') }}"
+                    <label for="distance" class="block text-sm font-medium text-gray-700">Distance (Miles)</label>
+                    <input type="number" id="distance" name="distance" value="{{ old('distance') }}"
                            class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm p-2 focus:border-blue-500 focus:ring-blue-500">
                 </div>
 
                 <div>
-                    <label for="message" class="block text-sm font-medium text-gray-700">Description</label>
-                    <textarea id="message" name="message" oninput="adjustHeight(this)"
+                    <label for="terrain" class="block text-sm font-medium text-gray-700">Terrain</label>
+                    <textarea id="terrain" name="terrain" value="{{ old('terrain') }}" oninput="adjustHeight(this)"
+                              class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm p-2 focus:border-blue-500 focus:ring-blue-500"></textarea>
+                </div>
+
+                <div>
+                    <label for="description" class="block text-sm font-medium text-gray-700">Description</label>
+                    <textarea id="description" name="description" value="{{ old('message') }}" oninput="adjustHeight(this)"
                               class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm p-2 focus:border-blue-500 focus:ring-blue-500"></textarea>
                 </div>
 

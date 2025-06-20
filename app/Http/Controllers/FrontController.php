@@ -45,6 +45,15 @@ class FrontController extends Controller
         $tickets = Ticket::all(); // fetch all tickets
         return view('tickets', compact('tickets'));
     }
+
+    public function ticketsbyquery(Request $request)
+    {
+        $query = $request->query('query');
+
+        $tickets = Ticket::where('name', 'like', '%' . $query . '%')->get();
+
+        return view('tickets', compact('tickets'));
+    }
     /**
      * Display a listing of the resource.
      *

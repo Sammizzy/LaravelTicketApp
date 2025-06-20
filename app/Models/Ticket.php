@@ -11,7 +11,7 @@ use SoftDeletes;
             protected $fillable =
                 [
 
-                'name', 'email', 'subject', 'message'
+                'name', 'email', 'distance', 'terrain', 'description'
 
             ];
 

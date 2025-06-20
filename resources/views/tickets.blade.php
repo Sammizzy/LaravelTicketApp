@@ -3,8 +3,27 @@
 @section('content')
     <div class="max-w-4xl mx-auto p-6">
         <div class="bg-white rounded-lg shadow-md p-6">
-            <h1 class="text-2xl font-bold mb-4">Tickets</h1>
-            <p class="text-gray-600 mb-6">You are in the Tickets Page. Tickets will be displayed here along with create/history/approve/deny actions.</p>
+            <h1 class="text-2xl font-bold mb-4">Runs logged</h1>
+            <p class="text-gray-600 mb-6">You are in the logged runs Page. <!--Tickets will be displayed here along with create/history/approve/deny actions.--></p>
+
+            <form method="GET" action="{{ route('tickets.search') }}" class="mb-4">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <div class="input-group shadow rounded">
+                            <input type="text"
+                                   name="query"
+                                   class="form-control border-end-0"
+                                   placeholder="🔍 Search tickets..."
+                                   value="{{ request('query') }}">
+                            <button type="submit" class="btn btn-primary">
+                                Search
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+
+
 
             <div class="flex justify-end mb-4">
                 <a href="{{ route('tickets.deleted') }}"
@@ -36,7 +55,9 @@
                             <a href="{{ route('tickets.show', $ticket->id) }}" class="block">
                                 <p><strong>Name:</strong> {{ $ticket->name }}</p>
                                 <p><strong>Email:</strong> {{ $ticket->email }}</p>
-                                <p><strong>Subject:</strong> {{ $ticket->subject }}</p>
+                                <p><strong>Distance:</strong> {{ $ticket->distance }}</p>
+                                <p><strong>Terrain:</strong> {{ $ticket->terrain }}</p>
+
                             </a>
 
                             <div class="flex gap-2 mt-4">

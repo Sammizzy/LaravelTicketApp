@@ -15,11 +15,13 @@ class FormController extends Controller
     // Handle form submission
     public function submitForm(Request $request)
     {
+
         $validatedData = $request->validate([
             'name' => 'required|max:500',
             'email' => 'required|email',
-            'subject' => 'required',
-            'message' => 'required',
+            'distance' => 'numeric',
+            'terrain' => 'string|nullable',
+            'description' => 'string|nullable',
         ]);
 
         // Save ticket to database
