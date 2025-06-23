@@ -13,7 +13,7 @@
                             <input type="text"
                                    name="query"
                                    class="form-control border-end-0"
-                                   placeholder="🔍 Search tickets..."
+                                   placeholder="🔍 Search run entries..."
                                    value="{{ request('query') }}">
                             <button type="submit" class="btn btn-primary">
                                 Search
